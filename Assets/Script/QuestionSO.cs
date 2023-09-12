@@ -2,22 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(menuName = "Quiz Question",fileName = "New Question")]
-public class QuestionSO : ScriptableObject 
+[CreateAssetMenu(menuName = "Quiz Question", fileName = "New Question")]
+public class QuestionSO : ScriptableObject
 {
-    [TextArea(2,4)]
-    [SerializeField] string question="Enter question here :^)";
-    [SerializeField] string[] answers=new string[4];
-    [SerializeField] int CorrectAnswerIndex;
-    public string GetQuestion(){
+    [TextArea(2,6)]
+    [SerializeField] string question = "Enter new question text here";
+    [SerializeField] string[] answers = new string[4];
+    [SerializeField] int correctAnswerIndex;
+
+    public string GetQuestion()
+    {
         return question;
     }
-    public int GetCorrectAnswerIndex(){
-        return CorrectAnswerIndex;
-    }
-    public string GetAnswer(int index){
+
+    public string GetAnswer(int index)
+    {
         return answers[index];
     }
+
+    public int GetCorrectAnswerIndex()
+    {
+        return correctAnswerIndex;
+    }
 }
+
 
